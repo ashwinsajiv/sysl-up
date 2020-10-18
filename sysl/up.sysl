@@ -1,0 +1,4 @@
+import up.json as up.Up
+
+Up:
+    @package = "up"

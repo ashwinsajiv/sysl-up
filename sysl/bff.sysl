@@ -1,0 +1,8 @@
+import up.sysl
+
+Up:
+    @package = "bff"
+
+    /v1/accounts:
+        GET:
+            Up <- GET /accounts
