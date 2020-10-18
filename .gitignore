@@ -1,2 +1,7 @@
 /.sysl-tmp
 /local.mk
+.idea/misc.xml
+.idea/modules.xml
+.idea/sysl-up.iml
+.idea/vcs.xml
+.idea/workspace.xml
