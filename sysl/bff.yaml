@@ -1,0 +1,53 @@
+openapi: 3.0.0
+info:
+  title: Bff
+
+paths:
+
+  /v1/accounts:
+    get:
+      description: Get account details
+      responses:
+        '200':
+          description: Successful retrieval of account
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetAccountResponse'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericError'
+
+components:
+    schemas:
+      GetAccountResponse:
+        type: object
+        properties:
+          amount:
+            type: string
+        required:
+          - amount
+
+      GenericError:
+        type: object
+        properties:
+          status:
+            $ref: '#/components/schemas/GenericErrorStatus'
+        required:
+          - status
+
+      GenericErrorStatus:
+        type: object
+        properties:
+          code:
+            description: Unique code to differentiate errors as required
+            type: string
+          description:
+            description: Human-readable description of the error
+            type: string
+        required:
+          - code
+          - description

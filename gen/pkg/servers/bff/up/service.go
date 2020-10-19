@@ -25,7 +25,6 @@ type Service interface {
 	GetTransactionsList(ctx context.Context, req *GetTransactionsListRequest) (*ListTransactionsResponse, error)
 	GetTransactions(ctx context.Context, req *GetTransactionsRequest) (*GetTransactionResponse, error)
 	GetUtilPingList(ctx context.Context, req *GetUtilPingListRequest) (*PingResponse, error)
-	GetV1AccountsList(ctx context.Context, req *GetV1AccountsListRequest) error
 	GetWebhooksList(ctx context.Context, req *GetWebhooksListRequest) (*ListWebhooksResponse, error)
 	GetWebhooks(ctx context.Context, req *GetWebhooksRequest) (*GetWebhookResponse, error)
 	GetWebhooksLogsList(ctx context.Context, req *GetWebhooksLogsListRequest) (*ListWebhookDeliveryLogsResponse, error)
@@ -513,35 +512,6 @@ func (s *Client) GetUtilPingList(ctx context.Context, req *GetUtilPingListReques
 		return OkPingResponseResponse, nil
 	}
 	return nil, common.CreateDownstreamError(ctx, common.DownstreamUnexpectedResponseError, result.HTTPResponse, result.Body, nil)
-}
-
-// GetV1AccountsList ...
-func (s *Client) GetV1AccountsList(ctx context.Context, req *GetV1AccountsListRequest) error {
-	required := []string{}
-	u, err := url.Parse(fmt.Sprintf("%s/v1/accounts", s.URL))
-	if err != nil {
-		return common.CreateError(ctx, common.InternalError, "failed to parse url", err)
-	}
-
-	result, err := restlib.DoHTTPRequest2(ctx, &restlib.HTTPRequest{
-		Client:        s.Client,
-		Method:        "GET",
-		URLString:     u.String(),
-		Body:          nil,
-		Required:      required,
-		OKResponse:    nil,
-		ErrorResponse: nil,
-		ExtraHeaders:  nil,
-	})
-	restlib.OnRestResultHTTPResult(ctx, result, err)
-	if err != nil {
-		return common.CreateError(ctx, common.DownstreamUnavailableError, "call failed: Up <- GET "+u.String(), err)
-	}
-
-	if result.HTTPResponse.StatusCode == http.StatusUnauthorized {
-		return common.CreateDownstreamError(ctx, common.DownstreamUnauthorizedError, result.HTTPResponse, result.Body, nil)
-	}
-	return nil
 }
 
 // GetWebhooksList ...

@@ -13,10 +13,10 @@ func main() {
     type AppConfig struct {
         // Define app-level config fields here.
     }
-    log.Fatal(up.Serve(context.Background(),
-        func(ctx context.Context, config AppConfig) (*up.ServiceInterface, *core.Hooks, error) {
+    log.Fatal(bff.Serve(context.Background(),
+        func(ctx context.Context, config AppConfig) (*bff.ServiceInterface, *core.Hooks, error) {
             // Perform one-time setup based on config here.
-            return &up.ServiceInterface{
+            return &bff.ServiceInterface{
                 // Add handlers here.
             }, nil, nil
         },

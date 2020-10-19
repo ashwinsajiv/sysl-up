@@ -616,10 +616,6 @@ type GetTransactionsRequest struct {
 type GetUtilPingListRequest struct {
 }
 
-// GetV1AccountsListRequest ...
-type GetV1AccountsListRequest struct {
-}
-
 // GetWebhooksListRequest ...
 type GetWebhooksListRequest struct {
 	PageSize *int64

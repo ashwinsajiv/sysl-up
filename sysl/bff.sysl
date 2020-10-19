@@ -1,8 +1,14 @@
 import up.sysl
+import bff.yaml as bff.Bff
 
-Up:
+Bff:
     @package = "bff"
 
     /v1/accounts:
         GET:
             Up <- GET /accounts
+
+    !type InternalServerError [~error]:
+        http_status <: string [value = "500"]
+        http_code <: string [value = "9998"]
+        http_message <: string [value = "Internal server error"]
