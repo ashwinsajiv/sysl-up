@@ -4,7 +4,6 @@ package up
 import (
 	"time"
 
-	"github.com/anz-bank/sysl-go/convert"
 	"github.com/anz-bank/sysl-go/validator"
 
 	"github.com/rickb777/date"
@@ -29,7 +28,7 @@ type AccountResource struct {
 type AccountResource_attributes struct {
 	AccountType EXTERNAL_AccountResource_attributes_accountType `json:"accountType"`
 	Balance     EXTERNAL_AccountResource_attributes_balance     `json:"balance"`
-	CreatedAt   convert.JSONTime                                `json:"createdAt"`
+	CreatedAt   string                                          `json:"createdAt"`
 	DisplayName string                                          `json:"displayName"`
 }
 
@@ -303,14 +302,14 @@ type TransactionResource struct {
 type TransactionResource_attributes struct {
 	Amount        EXTERNAL_TransactionResource_attributes_amount        `json:"amount"`
 	Cashback      EXTERNAL_TransactionResource_attributes_cashback      `json:"cashback"`
-	CreatedAt     convert.JSONTime                                      `json:"createdAt"`
+	CreatedAt     string                                                `json:"createdAt"`
 	Description   string                                                `json:"description"`
 	ForeignAmount EXTERNAL_TransactionResource_attributes_foreignAmount `json:"foreignAmount"`
 	HoldInfo      EXTERNAL_TransactionResource_attributes_holdInfo      `json:"holdInfo"`
 	Message       string                                                `json:"message"`
 	RawText       string                                                `json:"rawText"`
 	RoundUp       EXTERNAL_TransactionResource_attributes_roundUp       `json:"roundUp"`
-	SettledAt     convert.JSONTime                                      `json:"settledAt"`
+	SettledAt     string                                                `json:"settledAt"`
 	Status        EXTERNAL_TransactionResource_attributes_status        `json:"status"`
 }
 
@@ -410,7 +409,7 @@ type WebhookDeliveryLogResource struct {
 
 // WebhookDeliveryLogResource_attributes ...
 type WebhookDeliveryLogResource_attributes struct {
-	CreatedAt      convert.JSONTime                                              `json:"createdAt"`
+	CreatedAt      string                                                        `json:"createdAt"`
 	DeliveryStatus EXTERNAL_WebhookDeliveryLogResource_attributes_deliveryStatus `json:"deliveryStatus"`
 	Request        WebhookDeliveryLogResource_attributes_request                 `json:"request"`
 	Response       WebhookDeliveryLogResource_attributes_response                `json:"response"`
@@ -458,7 +457,7 @@ type WebhookEventResource struct {
 
 // WebhookEventResource_attributes ...
 type WebhookEventResource_attributes struct {
-	CreatedAt convert.JSONTime                                   `json:"createdAt"`
+	CreatedAt string                                             `json:"createdAt"`
 	EventType EXTERNAL_WebhookEventResource_attributes_eventType `json:"eventType"`
 }
 
@@ -524,10 +523,10 @@ type WebhookResource struct {
 
 // WebhookResource_attributes ...
 type WebhookResource_attributes struct {
-	CreatedAt   convert.JSONTime `json:"createdAt"`
-	Description string           `json:"description"`
-	SecretKey   *string          `json:"secretKey,omitempty"`
-	URL         string           `json:"url"`
+	CreatedAt   string  `json:"createdAt"`
+	Description string  `json:"description"`
+	SecretKey   *string `json:"secretKey,omitempty"`
+	URL         string  `json:"url"`
 }
 
 // WebhookResource_links ...
@@ -571,8 +570,8 @@ type GetAccountsTransactionsListRequest struct {
 	AccountId      string
 	PageSize       *int64
 	FilterStatus   *TransactionStatusEnum
-	FilterSince    *convert.JSONTime
-	FilterUntil    *convert.JSONTime
+	FilterSince    *string
+	FilterUntil    *string
 	FilterCategory *string
 	FilterTag      *string
 }
@@ -601,8 +600,8 @@ type GetTagsListRequest struct {
 type GetTransactionsListRequest struct {
 	PageSize       *int64
 	FilterStatus   *TransactionStatusEnum
-	FilterSince    *convert.JSONTime
-	FilterUntil    *convert.JSONTime
+	FilterSince    *string
+	FilterUntil    *string
 	FilterCategory *string
 	FilterTag      *string
 }

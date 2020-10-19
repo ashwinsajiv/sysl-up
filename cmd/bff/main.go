@@ -7,6 +7,7 @@ import (
     "github.com/anz-bank/sysl-go/core"
 
     "github.com/ashwinsajiv/sysl-up/gen/pkg/servers/bff"
+    "github.com/ashwinsajiv/sysl-up/internal/bff/handlers"
 )
 
 func main() {
@@ -16,9 +17,8 @@ func main() {
     log.Fatal(bff.Serve(context.Background(),
         func(ctx context.Context, config AppConfig) (*bff.ServiceInterface, *core.Hooks, error) {
             // Perform one-time setup based on config here.
-            return &bff.ServiceInterface{
-                // Add handlers here.
-            }, nil, nil
+            handler := handlers.NewGetV1AccountsList()
+            return &bff.ServiceInterface{GetV1AccountsList: handler.GetV1AccountsList}, nil, nil
         },
     ))
 }

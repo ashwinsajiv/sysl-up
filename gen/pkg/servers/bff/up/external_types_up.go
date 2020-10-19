@@ -1,7 +1,11 @@
 package up
 
 type EXTERNAL_AccountResource_attributes_accountType string
-type EXTERNAL_AccountResource_attributes_balance string
+type EXTERNAL_AccountResource_attributes_balance struct {
+	CurrencyCode     string `json:"currencyCode"`
+	Value            string `json:"value"`
+	ValueInBaseUnits int64  `json:"valueInBaseUnits"`
+}
 type EXTERNAL_GetAccountResponse_data string
 type EXTERNAL_TransactionResource_attributes_amount string
 type EXTERNAL_TransactionResource_attributes_cashback string

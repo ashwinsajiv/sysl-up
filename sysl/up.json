@@ -89,7 +89,6 @@
               },
               "createdAt": {
                 "type": "string",
-                "format": "date-time",
                 "description": "The date-time at which this account was first opened.\n"
               }
             },
@@ -720,13 +719,11 @@
               },
               "settledAt": {
                 "type": "string",
-                "format": "date-time",
                 "nullable": true,
                 "description": "The date-time at which this transaction settled. This field will be\n`null` for transactions that are currently in the `HELD` status.\n"
               },
               "createdAt": {
                 "type": "string",
-                "format": "date-time",
                 "description": "The date-time at which this transaction was first encountered.\n"
               }
             },
@@ -1011,7 +1008,6 @@
               },
               "createdAt": {
                 "type": "string",
-                "format": "date-time",
                 "description": "The date-time at which this webhook was created.\n"
               }
             },
@@ -1197,7 +1193,6 @@
               },
               "createdAt": {
                 "type": "string",
-                "format": "date-time",
                 "description": "The date-time at which this event was generated.\n"
               }
             },
@@ -1395,7 +1390,6 @@
               },
               "createdAt": {
                 "type": "string",
-                "format": "date-time",
                 "description": "The date-time at which this log entry was created.\n"
               }
             },
@@ -2157,8 +2151,7 @@
             "name": "filter[since]",
             "in": "query",
             "schema": {
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "required": false,
             "example": "2020-01-01T01:02:03+10:00",
@@ -2168,8 +2161,7 @@
             "name": "filter[until]",
             "in": "query",
             "schema": {
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "required": false,
             "example": "2020-02-01T01:02:03+10:00",
@@ -2444,8 +2436,7 @@
             "name": "filter[since]",
             "in": "query",
             "schema": {
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "required": false,
             "example": "2020-01-01T01:02:03+10:00",
@@ -2455,8 +2446,7 @@
             "name": "filter[until]",
             "in": "query",
             "schema": {
-              "type": "string",
-              "format": "date-time"
+              "type": "string"
             },
             "required": false,
             "example": "2020-02-01T01:02:03+10:00",

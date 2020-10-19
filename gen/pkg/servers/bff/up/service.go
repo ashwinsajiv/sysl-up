@@ -164,10 +164,10 @@ func (s *Client) GetAccountsTransactionsList(ctx context.Context, req *GetAccoun
 		q.Add("filter[status]", fmt.Sprintf("%v", *req.FilterStatus))
 	}
 	if req.FilterSince != nil {
-		q.Add("filter[since]", fmt.Sprintf("%v", *req.FilterSince))
+		q.Add("filter[since]", *req.FilterSince)
 	}
 	if req.FilterUntil != nil {
-		q.Add("filter[until]", fmt.Sprintf("%v", *req.FilterUntil))
+		q.Add("filter[until]", *req.FilterUntil)
 	}
 	if req.FilterCategory != nil {
 		q.Add("filter[category]", *req.FilterCategory)
@@ -389,10 +389,10 @@ func (s *Client) GetTransactionsList(ctx context.Context, req *GetTransactionsLi
 		q.Add("filter[status]", fmt.Sprintf("%v", *req.FilterStatus))
 	}
 	if req.FilterSince != nil {
-		q.Add("filter[since]", fmt.Sprintf("%v", *req.FilterSince))
+		q.Add("filter[since]", *req.FilterSince)
 	}
 	if req.FilterUntil != nil {
-		q.Add("filter[until]", fmt.Sprintf("%v", *req.FilterUntil))
+		q.Add("filter[until]", *req.FilterUntil)
 	}
 	if req.FilterCategory != nil {
 		q.Add("filter[category]", *req.FilterCategory)

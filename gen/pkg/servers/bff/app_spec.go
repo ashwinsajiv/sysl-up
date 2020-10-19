@@ -616,7 +616,7 @@ const AppSpec = `{
        {
         "name": "filter[since]",
         "type": {
-         "primitive": "DATETIME",
+         "primitive": "STRING",
          "opt": true,
          "sourceContext": {
           "file": "sysl/up.json",
@@ -626,7 +626,7 @@ const AppSpec = `{
           },
           "end": {
            "line": 25,
-           "col": 103
+           "col": 101
           }
          }
         }
@@ -634,17 +634,17 @@ const AppSpec = `{
        {
         "name": "filter[until]",
         "type": {
-         "primitive": "DATETIME",
+         "primitive": "STRING",
          "opt": true,
          "sourceContext": {
           "file": "sysl/up.json",
           "start": {
            "line": 25,
-           "col": 105
+           "col": 103
           },
           "end": {
            "line": 25,
-           "col": 131
+           "col": 127
           }
          }
         }
@@ -658,11 +658,11 @@ const AppSpec = `{
           "file": "sysl/up.json",
           "start": {
            "line": 25,
-           "col": 133
+           "col": 129
           },
           "end": {
            "line": 25,
-           "col": 160
+           "col": 156
           }
          }
         }
@@ -676,11 +676,11 @@ const AppSpec = `{
           "file": "sysl/up.json",
           "start": {
            "line": 25,
-           "col": 162
+           "col": 158
           },
           "end": {
            "line": 25,
-           "col": 184
+           "col": 180
           }
          }
         }
@@ -1021,7 +1021,7 @@ const AppSpec = `{
        {
         "name": "filter[since]",
         "type": {
-         "primitive": "DATETIME",
+         "primitive": "STRING",
          "opt": true,
          "sourceContext": {
           "file": "sysl/up.json",
@@ -1031,7 +1031,7 @@ const AppSpec = `{
           },
           "end": {
            "line": 67,
-           "col": 103
+           "col": 101
           }
          }
         }
@@ -1039,17 +1039,17 @@ const AppSpec = `{
        {
         "name": "filter[until]",
         "type": {
-         "primitive": "DATETIME",
+         "primitive": "STRING",
          "opt": true,
          "sourceContext": {
           "file": "sysl/up.json",
           "start": {
            "line": 67,
-           "col": 105
+           "col": 103
           },
           "end": {
            "line": 67,
-           "col": 131
+           "col": 127
           }
          }
         }
@@ -1063,11 +1063,11 @@ const AppSpec = `{
           "file": "sysl/up.json",
           "start": {
            "line": 67,
-           "col": 133
+           "col": 129
           },
           "end": {
            "line": 67,
-           "col": 160
+           "col": 156
           }
          }
         }
@@ -1081,11 +1081,11 @@ const AppSpec = `{
           "file": "sysl/up.json",
           "start": {
            "line": 67,
-           "col": 162
+           "col": 158
           },
           "end": {
            "line": 67,
-           "col": 184
+           "col": 180
           }
          }
         }
@@ -1837,7 +1837,7 @@ const AppSpec = `{
         }
        },
        "createdAt": {
-        "primitive": "DATETIME",
+        "primitive": "STRING",
         "attrs": {
          "json_tag": {
           "s": "createdAt"
@@ -5450,7 +5450,7 @@ const AppSpec = `{
         }
        },
        "createdAt": {
-        "primitive": "DATETIME",
+        "primitive": "STRING",
         "attrs": {
          "json_tag": {
           "s": "createdAt"
@@ -5631,7 +5631,7 @@ const AppSpec = `{
         }
        },
        "settledAt": {
-        "primitive": "DATETIME",
+        "primitive": "STRING",
         "attrs": {
          "json_tag": {
           "s": "settledAt"
@@ -6814,7 +6814,7 @@ const AppSpec = `{
      "tuple": {
       "attrDefs": {
        "createdAt": {
-        "primitive": "DATETIME",
+        "primitive": "STRING",
         "attrs": {
          "json_tag": {
           "s": "createdAt"
@@ -7382,7 +7382,7 @@ const AppSpec = `{
      "tuple": {
       "attrDefs": {
        "createdAt": {
-        "primitive": "DATETIME",
+        "primitive": "STRING",
         "attrs": {
          "json_tag": {
           "s": "createdAt"
@@ -8168,7 +8168,7 @@ const AppSpec = `{
      "tuple": {
       "attrDefs": {
        "createdAt": {
-        "primitive": "DATETIME",
+        "primitive": "STRING",
         "attrs": {
          "json_tag": {
           "s": "createdAt"
